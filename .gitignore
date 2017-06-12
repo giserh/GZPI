@@ -1,0 +1,8 @@
+node_modules/
+.idea/
+
+font-end/node_modules/
+font-end/.idea/
+
+back-end/out/
+back-end/.idea/
