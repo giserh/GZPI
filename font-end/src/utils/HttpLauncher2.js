@@ -2,17 +2,16 @@
  * Created by Leo on 2017/6/12.
  */
 
-class HttpLauncher {
-  static doGet(url, parameter) {
+let httpLauncher = {
+  doGet(url, parameter) {
     checkParameter('doGet', url, parameter);
     doGet(url, parameter);
-  }
-
-  static doPost(url, parameter) {
+  },
+  doPost(url, parameter) {
     checkParameter('doPost', url, parameter);
     doPost(url, parameter);
   }
-}
+};
 
 function checkParameter(launchType, url, parameter) {
   if (typeof parameter !== 'object') {
@@ -34,4 +33,4 @@ function doPost(url, parameter) {
   xhr.send(parameter);
 }
 
-export default HttpLauncher;
+export default httpLauncher;
