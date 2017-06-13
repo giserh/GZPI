@@ -1,4 +1,9 @@
 <div ng-controller="ProjectController">
   <sidebar-directive></sidebar-directive>
-  <tab-list conf="vm.tabList"></tab-list>
+  <tab-list conf="vm.tabInfo"></tab-list>
+  <hr>
+  <ul class="workspace-list">
+    <li ng-repeat="tab in vm.tabInfo.tabList track by $index"
+        ng-include="tab.templateUrl" ng-show="tab==vm.tabInfo.currentTab"></li>
+  </ul>
 </div>

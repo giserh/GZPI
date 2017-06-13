@@ -11,7 +11,15 @@ function tabList($rootScope) {
       conf: '='
     },
     link(scope) {
-      scope.tabList = scope.conf;
+      let tabInfo = scope.tabInfo = scope.conf;
+      scope.tabList = tabInfo.tabList;
+
+      scope.selectTab = function (tab, tabInfo) {
+        tabInfo.currentTab = tab;
+      };
+
+      scope.closeTab = function (tab, tabInfo) {
+      };
     }
   };
 }

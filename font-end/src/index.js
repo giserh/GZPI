@@ -26,18 +26,6 @@ let app = angular.module('app', ['ui.router', 'app.directives', 'app.services', 
 
 app.run(['$rootScope', function ($rootScope) {
   let vm = $rootScope.vm = {};
-
-  vm.openTab = function (tab, tabList) {
-
-  };
-
-  vm.selectTab = function (tab, tabList) {
-
-  };
-
-  vm.closeTab = function (tab, tabList) {
-
-  };
 }]);
 
 app.config(routerConf);

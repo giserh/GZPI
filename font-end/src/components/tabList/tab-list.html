@@ -1,6 +1,6 @@
 <ul class="tab-list">
   <li ng-repeat="tab in tabList track by $index">
-    <a href="javascript:void(0)" ng-click="selectTab(tab)">{{tab.title}}</a>
-    <i ng-click="closeTab(tab)"></i>
+    <a href="javascript:void(0)" ng-click="selectTab(tab, tabInfo)">{{tab.title}}</a>
+    <i ng-click="closeTab(tab)">{{tab.id}}</i>
   </li>
 </ul>
