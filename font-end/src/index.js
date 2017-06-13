@@ -6,24 +6,38 @@ import './assets/less/index.less';
 import routerConf from './config/router/routerConf';
 import scripts from './config/scripts';
 
+angular.module('app.directives', []);
 angular.module('app.services', []);
+angular.module('app.controllers', []);
+
 scripts.forEach(item => {
+  if (item.directive) {
+    angular.module('app.directives').directive(item.directive.name, item.directive);
+  }
   if (item.service) {
     angular.module('app.services').factory(item.service.name, item.service);
   }
-});
-
-angular.module('app.controllers', []);
-scripts.forEach(item => {
   if (item.controller) {
     angular.module('app.controllers').controller(item.controller.name, item.controller);
   }
 });
 
-let app = angular.module('app', ['ui.router', 'app.services', 'app.controllers']);
+let app = angular.module('app', ['ui.router', 'app.directives', 'app.services', 'app.controllers']);
 
-app.controller('AppController', ['$scope', function ($scope) {
+app.run(['$rootScope', function ($rootScope) {
+  let vm = $rootScope.vm = {};
 
+  vm.openTab = function (tab, tabList) {
+
+  };
+
+  vm.selectTab = function (tab, tabList) {
+
+  };
+
+  vm.closeTab = function (tab, tabList) {
+
+  };
 }]);
 
 app.config(routerConf);

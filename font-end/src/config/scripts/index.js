@@ -3,8 +3,16 @@
  */
 
 import common from './common';
+import home from './home';
+import data from './data';
+import project from './project';
+import talents from './talents';
 
 let scripts = [];
 scripts = scripts.concat(common);
+scripts = scripts.concat(home);
+scripts = scripts.concat(data);
+scripts = scripts.concat(project);
+scripts = scripts.concat(talents);
 
 export default scripts;

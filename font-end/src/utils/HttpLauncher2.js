@@ -2,15 +2,16 @@
  * Created by Leo on 2017/6/12.
  */
 
-let httpLauncher = {
-  doGet(url, parameter) {
-    checkParameter('doGet', url, parameter);
-    doGet(url, parameter);
-  },
-  doPost(url, parameter) {
-    checkParameter('doPost', url, parameter);
-    doPost(url, parameter);
-  }
+let httpLauncher = {};
+
+httpLauncher.doGet = function (url, parameter) {
+  checkParameter('doGet', url, parameter);
+  doGet(url, parameter);
+};
+
+httpLauncher.doPost = function (url, parameter) {
+  checkParameter('doPost', url, parameter);
+  doPost(url, parameter);
 };
 
 function checkParameter(launchType, url, parameter) {

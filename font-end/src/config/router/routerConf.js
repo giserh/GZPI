@@ -7,12 +7,25 @@ function routerConf($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('app', {
       abstract: true,
+      templateUrl: 'config/router/router.html'
+    })
+    .state('app.home', {
+      url: '/home',
       templateUrl: 'modules/home/home.html'
     })
-    .state('app.main', {
-      url: '/:path',
-      template: ''
+    .state('app.data', {
+      url: '/data',
+      templateUrl: 'modules/data/data.html'
     })
+    .state('app.project', {
+      url: '/project',
+      templateUrl: 'modules/project/project.html'
+    })
+    .state('app.talents', {
+      url: '/talents',
+      templateUrl: 'modules/talents/talents.html'
+    })
+
 }
 
 routerConf.$inject = ['$stateProvider', '$urlRouterProvider'];
