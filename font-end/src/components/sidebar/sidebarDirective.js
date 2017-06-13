@@ -8,7 +8,6 @@ function sidebarDirective() {
     replace: true,
     template: require('./sidebar.html'),
     link() {
-      console.log('sidebarDirective指令加载成功');
     }
   };
 }

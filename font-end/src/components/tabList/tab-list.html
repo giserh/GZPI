@@ -1,6 +1,6 @@
-<ul class="tab-list">
-  <li ng-repeat="tab in tabList track by $index">
-    <a href="javascript:void(0)" ng-click="selectTab(tab, tabInfo)">{{tab.title}}</a>
-    <i ng-click="closeTab(tab)">{{tab.id}}</i>
+<ul class="tabList fn-clear">
+  <li class="fn-left" ng-repeat="tab in module.tabList track by $index" ng-class="{active: tab==module.currentTab}">
+    <a href="javascript:void(0)" ng-click="openTab(tab)">{{tab.title}}</a>
+    <span class="close-tab fa fa-times" ng-click="closeTab(tab)"></span>
   </li>
 </ul>

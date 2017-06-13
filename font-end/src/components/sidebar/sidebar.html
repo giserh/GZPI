@@ -1,19 +1,16 @@
-<div class="sidebar" ng-controller="SidebarController">
+<div class="sidebar">
   <ul>
     <li>
-      <a href="javascript:void(0)">回首页</a>
+      <a ui-sref="app.home">
+        <img src="./images/home.png" alt="">
+        <span>回首页</span>
+      </a>
     </li>
-    <li>
-      <a href="javascript:void(0)">新建项目</a>
-    </li>
-    <li>
-      <a href="javascript:void(0)">待审批</a>
-    </li>
-    <li>
-      <a href="javascript:void(0)">我的项目</a>
-    </li>
-    <li>
-      <a href="javascript:void(0)">项目管理</a>
+    <li ng-repeat="bar in module.sidebarList track by $index">
+      <a href="javascript:void(0)" ng-click="openTab(bar)" ng-class="{active: bar==module.currentSidebar}">
+        <img src="{{bar.imgSrc}}" alt="">
+        <span>{{bar.title}}</span>
+      </a>
     </li>
   </ul>
 </div>

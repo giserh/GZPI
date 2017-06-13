@@ -1,0 +1,39 @@
+.tabList{
+  li{
+    position: relative;
+    &.active{
+      a{
+        border-bottom: 3px solid #3a94c3;
+      }
+    }
+    &:hover{
+      .close-tab{
+        display: block;
+      }
+    }
+  }
+  a{
+    display: block;
+    font-size: 14px;
+    line-height: 40px;
+    color: #333;
+    max-width: 125px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    padding: 0 15px;
+    border-bottom: 1px solid transparent;
+  }
+  .close-tab{
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    cursor: default;
+    color: #3a94c3;
+    display: none;
+  }
+}

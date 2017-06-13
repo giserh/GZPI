@@ -7,18 +7,21 @@ function tabList($rootScope) {
     restrict: 'EA',
     replace: true,
     template: require('./tab-list.html'),
-    scope: {
-      conf: '='
-    },
-    link(scope) {
-      let tabInfo = scope.tabInfo = scope.conf;
-      scope.tabList = tabInfo.tabList;
+    link() {
+      $rootScope.module.tabList = [$rootScope.module.currentTab = $rootScope.module.currentSidebar];
 
-      scope.selectTab = function (tab, tabInfo) {
-        tabInfo.currentTab = tab;
+      $rootScope.openTab = function (tab) {
+        $rootScope.module.tabList.push(tab);
+        $rootScope.module.currentTab = tab;
+
+        $rootScope.module.sidebarList.forEach(item => {
+          if (item.sidebarName === tab.sidebarName) {
+            $rootScope.module.currentSidebar = item;
+          }
+        })
       };
 
-      scope.closeTab = function (tab, tabInfo) {
+      $rootScope.closeTab = function (tab) {
       };
     }
   };

@@ -25,7 +25,6 @@ scripts.forEach(item => {
 let app = angular.module('app', ['ui.router', 'app.directives', 'app.services', 'app.controllers']);
 
 app.run(['$rootScope', function ($rootScope) {
-  let vm = $rootScope.vm = {};
 }]);
 
 app.config(routerConf);

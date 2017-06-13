@@ -4,35 +4,44 @@
 
 import uuid from '../../utils/uuid';
 
-function ProjectController($scope) {
+function ProjectController($scope, $rootScope) {
   let vm = $scope.vm = {};
 
-  vm.tabInfo = {
-    currentTab: {},
-    tabList: [
+  $rootScope.module = {
+    sidebarList: [
       {
         id: uuid(8, 16),
-        title: '测试tab1',
-        templateUrl: './modules/project/newProject/newProject.html'
+        title: '新建项目',
+        templateUrl: './modules/project/newProject/newProject.html',
+        imgSrc: 'components/sidebar/images/newProject.png',
+        sidebarName: 'newProject'
       },
       {
         id: uuid(8, 16),
-        title: '测试tab2',
-        templateUrl: './modules/project/pendingApproval/pendingApproval.html'
+        title: '待审批',
+        templateUrl: './modules/project/pendingApproval/pendingApproval.html',
+        imgSrc: 'components/sidebar/images/pendingApproval.png',
+        sidebarName: 'pendingApproval'
+      },
+      {
+        id: uuid(8, 16),
+        title: '我的项目',
+        templateUrl: './modules/project/myProject/myProject.html',
+        imgSrc: 'components/sidebar/images/myProject.png',
+        sidebarName: 'myProject'
+      },
+      {
+        id: uuid(8, 16),
+        title: '项目管理',
+        templateUrl: './modules/project/projectManage/projectManage.html',
+        imgSrc: 'components/sidebar/images/projectManage.png',
+        sidebarName: 'projectManage'
       }
     ]
   };
-
-  vm.openTab = function (tab, tabList) {
-
-  };
-
-  vm.closeTab = function (tab, tabList) {
-
-  };
-
+  $rootScope.module.currentSidebar = $rootScope.module.sidebarList[1];
 }
 
-ProjectController.$inject = ['$scope'];
+ProjectController.$inject = ['$scope', '$rootScope'];
 
 export default ProjectController;
