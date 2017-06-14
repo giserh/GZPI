@@ -11,29 +11,29 @@ let sidebarConf = {
         id: uuid(8, 16),
         title: '新建项目',
         templateUrl: './modules/project/newProject/newProject.html',
-        imgSrc: 'components/sidebar/images/newProject.png',
-        sidebarName: 'newProject'
+        sidebarName: 'newProject',
+        iconClass: 'fa fa-file'
       },
       {
         id: uuid(8, 16),
         title: '待审批',
         templateUrl: './modules/project/pendingApproval/pendingApproval.html',
-        imgSrc: 'components/sidebar/images/pendingApproval.png',
-        sidebarName: 'pendingApproval'
+        sidebarName: 'pendingApproval',
+        iconClass: 'glyphicon glyphicon-calendar'
       },
       {
         id: uuid(8, 16),
         title: '我的项目',
         templateUrl: './modules/project/myProject/myProject.html',
-        imgSrc: 'components/sidebar/images/myProject.png',
-        sidebarName: 'myProject'
+        sidebarName: 'myProject',
+        iconClass: 'glyphicon glyphicon-tasks'
       },
       {
         id: uuid(8, 16),
         title: '项目管理',
         templateUrl: './modules/project/projectManage/projectManage.html',
-        imgSrc: 'components/sidebar/images/projectManage.png',
-        sidebarName: 'projectManage'
+        sidebarName: 'projectManage',
+        iconClass: 'glyphicon glyphicon-folder-open'
       }
     ]
   }

@@ -12,4 +12,7 @@ function sidebarDirective() {
   };
 }
 
+sidebarDirective.$inject = [];
+sidebarDirective.directiveName = 'sidebarDirective';
+
 export default sidebarDirective;

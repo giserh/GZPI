@@ -11,5 +11,6 @@ function ProjectController($scope, $rootScope) {
 }
 
 ProjectController.$inject = ['$scope', '$rootScope'];
+ProjectController.controllerName = 'ProjectController';
 
 export default ProjectController;

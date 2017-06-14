@@ -11,5 +11,6 @@ function HeaderController($scope, headerService) {
 }
 
 HeaderController.$inject = ['$scope', 'headerService'];
+HeaderController.controllerName = 'HeaderController';
 
 export default HeaderController;

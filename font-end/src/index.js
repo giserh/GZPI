@@ -12,13 +12,13 @@ angular.module('app.controllers', []);
 
 scripts.forEach(item => {
   if (item.directive) {
-    angular.module('app.directives').directive(item.directive.name, item.directive);
+    angular.module('app.directives').directive(item.directive.directiveName, item.directive);
   }
   if (item.service) {
-    angular.module('app.services').factory(item.service.name, item.service);
+    angular.module('app.services').factory(item.service.serviceName, item.service);
   }
   if (item.controller) {
-    angular.module('app.controllers').controller(item.controller.name, item.controller);
+    angular.module('app.controllers').controller(item.controller.controllerName, item.controller);
   }
 });
 

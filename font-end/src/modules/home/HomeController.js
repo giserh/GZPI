@@ -3,9 +3,9 @@
  */
 
 function HomeController() {
-  console.log('HomeController加载完毕');
 }
 
 HomeController.$inject = [];
+HomeController.controllerName = 'HomeController';
 
 export default HomeController;

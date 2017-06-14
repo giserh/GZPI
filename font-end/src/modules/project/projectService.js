@@ -7,5 +7,6 @@ function projectService() {
 }
 
 projectService.$inject = [];
+projectService.serviceName = 'projectService';
 
 export default projectService;

@@ -13,5 +13,6 @@ function headerService() {
 }
 
 headerService.$inject = [];
+headerService.serviceName = 'headerService';
 
 export default headerService;

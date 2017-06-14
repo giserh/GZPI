@@ -7,5 +7,6 @@ function HomeSidebarController() {
 }
 
 HomeSidebarController.$inject = [];
+HomeSidebarController.controllerName = 'HomeSidebarController';
 
 export default HomeSidebarController;
