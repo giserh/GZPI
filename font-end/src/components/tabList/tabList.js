@@ -18,7 +18,7 @@ function tabList($rootScope) {
           if (item.sidebarName === tab.sidebarName) {
             $rootScope.module.currentSidebar = item;
           }
-        })
+        });
       };
 
       $rootScope.closeTab = function (tab) {
