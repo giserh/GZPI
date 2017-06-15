@@ -2,17 +2,17 @@
  * Created by Leo on 2017/6/12.
  */
 
-let httpLauncher = {};
+class HttpInitiator {
+  static doGet(url, parameter) {
+    checkParameter('doGet', url, parameter);
+    doGet(url, parameter);
+  }
 
-httpLauncher.doGet = function (url, parameter) {
-  checkParameter('doGet', url, parameter);
-  doGet(url, parameter);
-};
-
-httpLauncher.doPost = function (url, parameter) {
-  checkParameter('doPost', url, parameter);
-  doPost(url, parameter);
-};
+  static doPost(url, parameter) {
+    checkParameter('doPost', url, parameter);
+    doPost(url, parameter);
+  }
+}
 
 function checkParameter(launchType, url, parameter) {
   if (typeof parameter !== 'object') {
@@ -34,4 +34,4 @@ function doPost(url, parameter) {
   xhr.send(parameter);
 }
 
-export default httpLauncher;
+export default HttpInitiator;

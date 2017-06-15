@@ -21,9 +21,9 @@ function routerConf($stateProvider, $urlRouterProvider) {
       url: '/project',
       templateUrl: 'modules/project/project.html'
     })
-    .state('app.talents', {
-      url: '/talents',
-      templateUrl: 'modules/talents/talents.html'
+    .state('app.talent', {
+      url: '/talent',
+      templateUrl: 'modules/talent/talent.html'
     })
 
 }

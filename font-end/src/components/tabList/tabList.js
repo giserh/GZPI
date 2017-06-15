@@ -25,11 +25,7 @@ function tabList($rootScope) {
 
         $rootScope.module.currentTab = tab;
 
-        for (let item of $rootScope.module.sidebarList) {
-          if (item.sidebarName === $rootScope.module.currentTab.sidebarName) {
-            $rootScope.module.currentSidebar = item;
-          }
-        }
+        relateTabSidebar();
       };
 
       $rootScope.closeTab = function (tab) {
@@ -51,12 +47,16 @@ function tabList($rootScope) {
           }
         }
 
+        relateTabSidebar();
+      };
+
+      function relateTabSidebar() {
         for (let item of $rootScope.module.sidebarList) {
           if (item.sidebarName === $rootScope.module.currentTab.sidebarName) {
             $rootScope.module.currentSidebar = item;
           }
         }
-      };
+      }
     }
   };
 }

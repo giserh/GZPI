@@ -1,0 +1,140 @@
+.home-container{
+  padding-top: 10px;
+  .tab-list{
+    li{
+      float: left;
+      margin-right: 10px;
+      position: relative;
+      &.active{
+        a{
+          color: #43b1e4;
+          background: #dbe6f5;
+        }
+      }
+    }
+    a{
+      display: block;
+      width: 120px;
+      height: 30px;
+      font-size: 12px;
+      line-height: 30px;
+      color: #333;
+      background: #eee;
+      text-align: center;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+    .count{
+      display: block;
+      width: 18px;
+      height: 18px;
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      border-radius: 100%;
+      font-style: normal;
+      position: absolute;
+      right: -9px;
+      top: -9px;
+      z-index: 2;
+      font-size: 12px;
+      line-height: 18px;
+      color: #fff;
+      text-align: center;
+      background: red;
+      font-weight: bold;
+    }
+  }
+  .title-list{
+    background: #d7e5f5;
+    margin-bottom: 2px;
+    margin-top: 1px;
+    li{
+      float: left;
+      font-size: 15px;
+      line-height: 36px;
+      font-weight: bold;
+      padding-left: 8px;
+      &:nth-child(1){
+        //width: 8%;
+        width: 120px;
+      }
+      &:nth-child(2){
+        width: 43%;
+      }
+      &:nth-child(3){
+        width: 19%;
+      }
+      &:nth-child(4){
+        width: 17%;
+      }
+      &:nth-child(5){
+        //width: 13%;
+      }
+    }
+  }
+  .table-name{
+    font-size: 15px;
+    line-height: 18px;
+    color: #88847b;
+    padding: 8px;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    background: #f6f6f6;
+    opacity: 0.8;
+    cursor: pointer;
+    .icon{
+      color: #00ccff;
+      margin-left: 4px;
+      margin-right: 6px;
+    }
+    .fa{
+      display: inline-block;
+      width: 9px;
+      height: 15px;
+    }
+  }
+  table{
+    display: block;
+    tbody{
+      display: block;
+    }
+    tr{
+      display: block;
+      width: 100%;
+      border-top: 1px solid #ddd;
+      cursor: pointer;
+      &:hover{
+        background: #efefef;
+      }
+      &:last-child{
+        border-bottom: 1px solid #ddd;
+      }
+    }
+    td{
+      float: left;
+      display: block;
+      font-size: 14px;
+      line-height: 30px;
+      color: #88847b;
+      padding-left: 8px;
+      border-left: 1px solid #ddd;
+      &:nth-child(1){
+        //width: 8%;
+        width: 120px;
+      }
+      &:nth-child(2){
+        width: 43%;
+      }
+      &:nth-child(3){
+        width: 19%;
+      }
+      &:nth-child(4){
+        width: 17%;
+      }
+      &:nth-child(5){
+        //width: 13%;
+      }
+    }
+  }
+}

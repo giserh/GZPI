@@ -2,7 +2,7 @@
  * Created by Lxg on 2017/6/12.
  */
 
-function httpLauncher($http, $q) {
+function HttpInitiator($http, $q) {
   /*
   function http(method, parameter, url) {
     let deffer = $q.defer();
@@ -55,6 +55,6 @@ function httpLauncher($http, $q) {
   return {doGet, doPost};
 }
 
-httpLauncher.$inject = ["$http", "$q"];
+HttpInitiator.$inject = ["$http", "$q"];
 
-export default httpLauncher;
+export default HttpInitiator;

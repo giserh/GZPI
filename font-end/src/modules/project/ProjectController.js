@@ -5,9 +5,8 @@
 import sidebarConf from '../../config/sidebarConf';
 
 function ProjectController($scope, $rootScope) {
-  let vm = $scope.vm = {};
-
   $rootScope.module = sidebarConf.project;
+  let vm = $scope.vm = {};
 }
 
 ProjectController.$inject = ['$scope', '$rootScope'];

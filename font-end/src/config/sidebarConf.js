@@ -5,6 +5,38 @@
 import uuid from '../utils/uuid';
 
 let sidebarConf = {
+  data: {
+    sidebarList: [
+      {
+        id: uuid(8, 16),
+        title: '个人资料',
+        templateUrl: './modules/data/personalData/personalData.html',
+        sidebarName: 'personalData',
+        iconClass: 'fa fa-file'
+      },
+      {
+        id: uuid(8, 16),
+        title: '项目资料',
+        templateUrl: './modules/data/projectData/projectData.html',
+        sidebarName: 'projectData',
+        iconClass: 'glyphicon glyphicon-calendar'
+      },
+      {
+        id: uuid(8, 16),
+        title: '所级资料',
+        templateUrl: './modules/data/stationData/stationData.html',
+        sidebarName: 'stationData',
+        iconClass: 'glyphicon glyphicon-tasks'
+      },
+      {
+        id: uuid(8, 16),
+        title: '院级资料',
+        templateUrl: './modules/data/instituteData/instituteData.html',
+        sidebarName: 'instituteData',
+        iconClass: 'glyphicon glyphicon-folder-open'
+      }
+    ]
+  },
   project: {
     sidebarList: [
       {
@@ -36,9 +68,36 @@ let sidebarConf = {
         iconClass: 'glyphicon glyphicon-folder-open'
       }
     ]
+  },
+  talent: {
+    sidebarList: [
+      {
+        id: uuid(8, 16),
+        title: '院内人才',
+        templateUrl: './modules/talent/internalTalents/internalTalents.html',
+        sidebarName: 'internalTalents',
+        iconClass: 'fa fa-file'
+      },
+      {
+        id: uuid(8, 16),
+        title: '院外专家',
+        templateUrl: './modules/talent/externalExperts/externalExperts.html',
+        sidebarName: 'externalExperts',
+        iconClass: 'glyphicon glyphicon-calendar'
+      },
+      {
+        id: uuid(8, 16),
+        title: '培训管理',
+        templateUrl: './modules/talent/trainingManagement/trainingManagement.html',
+        sidebarName: 'trainingManagement',
+        iconClass: 'glyphicon glyphicon-tasks'
+      }
+    ]
   }
 };
 
+sidebarConf.data.currentSidebar = sidebarConf.data.sidebarList[0];
 sidebarConf.project.currentSidebar = sidebarConf.project.sidebarList[1];
+sidebarConf.talent.currentSidebar = sidebarConf.talent.sidebarList[0];
 
 export default sidebarConf;

@@ -3,12 +3,12 @@
  */
 
 function headerService() {
-  function init() {
-    alert('headerService');
+  function logout() {
+    alert('注销');
   }
 
   return {
-    init
+    logout
   };
 }
 

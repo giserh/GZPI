@@ -1,4 +1,67 @@
 <div ng-controller="HomeController">
   <div ng-include="'./modules/home/homeSidebar/homeSidebar.html'"></div>
-  <h3>home.html</h3>
+  <div class="home-container">
+    <div class="nav fn-clear">
+      <ul class="tab-list fn-clear fn-left">
+        <li class="active">
+          <a href="javascript:void(0)">我的事项</a>
+        </li>
+        <li>
+          <a href="javascript:void(0)">待我审批</a>
+          <i class="count">12</i>
+        </li>
+      </ul>
+    </div>
+    <ul class="title-list fn-clear">
+      <li>事项编号</li>
+      <li>事项名称</li>
+      <li>类型</li>
+      <li>当前阶段</li>
+      <li>我的角色</li>
+    </ul>
+    <div class="table-name" ng-click="vm.togglePanel('Project')">
+      <span class="fa" ng-class="{'fa-caret-down': vm.isProjectPanelVisible,'fa-caret-right': !vm.isProjectPanelVisible}"></span>
+      <span class="icon glyphicon glyphicon-book"></span>
+      项目/7
+    </div>
+    <table ng-show="vm.isProjectPanelVisible">
+      <tbody>
+        <tr class="fn-clear" ng-click="vm.showProjectDetail()">
+          <td>A2015417</td>
+          <td>宣威市城市综合防灾规划</td>
+          <td>规划设计项目</td>
+          <td>合同签订</td>
+          <td>项目负责人</td>
+        </tr>
+        <tr class="fn-clear">
+          <td>T2014003</td>
+          <td>甘肃省省域人防体系规划</td>
+          <td>规划设计项目</td>
+          <td>成果签发</td>
+          <td>项目负责人</td>
+        </tr>
+        <tr class="fn-clear">
+          <td>T2015012</td>
+          <td>襄阳市汉江北岸樊城段绿化、亮化设计项目</td>
+          <td>规划设计项目</td>
+          <td>成果审定</td>
+          <td>项目负责人</td>
+        </tr>
+        <tr class="fn-clear">
+          <td>T2015205</td>
+          <td>胶东国际机场（胶州）临空经济区总体规划</td>
+          <td>科研项目</td>
+          <td>项目审核</td>
+          <td>项目助理</td>
+        </tr>
+        <tr class="fn-clear">
+          <td>T2015008</td>
+          <td>大榭开发区大西地块城市设计</td>
+          <td>科研项目</td>
+          <td>项目调研</td>
+          <td>项目助理</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

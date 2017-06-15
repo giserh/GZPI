@@ -2,10 +2,24 @@
  * Created by Lxg on 2017/6/13.
  */
 
-function HomeController() {
+import sidebarConf from '../../config/sidebarConf';
+
+function HomeController($scope, $state, $rootScope) {
+  let vm = $scope.vm = {};
+
+  vm.isProjectPanelVisible = true;
+
+  vm.togglePanel = function (panelName) {
+    vm['is' + panelName + 'PanelVisible'] = !vm['is' + panelName + 'PanelVisible'];
+  };
+
+  vm.showProjectDetail = function (projectInfo) {
+    $rootScope.setInitialState('project', sidebarConf.project.sidebarList[2], projectInfo);
+    $state.go('app.project');
+  };
 }
 
-HomeController.$inject = [];
+HomeController.$inject = ['$scope', '$state', '$rootScope'];
 HomeController.controllerName = 'HomeController';
 
 export default HomeController;

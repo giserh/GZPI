@@ -6,8 +6,8 @@ function HeaderController($scope, headerService) {
   let vm = $scope.vm = {};
 
   vm.logout = function () {
-    headerService.init();
-  }
+    headerService.logout();
+  };
 }
 
 HeaderController.$inject = ['$scope', 'headerService'];

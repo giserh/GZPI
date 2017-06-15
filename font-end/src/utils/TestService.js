@@ -2,7 +2,7 @@
  * Created by Leo on 2017/6/12.
  */
 
-import HttpLauncher from './httpLauncher2';
+import HttpLauncher from './HttpInitiator';
 
 class TestService extends HttpLauncher{
   static getTestData(param, url) {

@@ -5,6 +5,7 @@
 import './assets/less/index.less';
 import routerConf from './config/router/routerConf';
 import scripts from './config/scripts';
+import sidebarConf from './config/sidebarConf';
 
 angular.module('app.directives', []);
 angular.module('app.services', []);
@@ -25,6 +26,11 @@ scripts.forEach(item => {
 let app = angular.module('app', ['ui.router', 'app.directives', 'app.services', 'app.controllers']);
 
 app.run(['$rootScope', function ($rootScope) {
+  $rootScope.setInitialState = function (moduleName, sidebarName, detailInfo) {
+    $rootScope.module = sidebarConf[moduleName];
+    $rootScope.module.currentSidebar = sidebarName;
+    $rootScope.module.currentSidebar.detailInfo = detailInfo;
+  };
 }]);
 
 app.config(routerConf);
