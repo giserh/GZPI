@@ -14,8 +14,7 @@ function HomeController($scope, $state, $rootScope) {
   };
 
   vm.showProjectDetail = function (projectInfo) {
-    $rootScope.setInitialState('project', sidebarConf.project.sidebarList[2], projectInfo);
-    $state.go('app.project');
+    $rootScope.setInitialState('project', 'myProject', projectInfo);
   };
 }
 

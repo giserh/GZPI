@@ -96,8 +96,13 @@ let sidebarConf = {
   }
 };
 
-sidebarConf.data.currentSidebar = sidebarConf.data.sidebarList[0];
-sidebarConf.project.currentSidebar = sidebarConf.project.sidebarList[1];
-sidebarConf.talent.currentSidebar = sidebarConf.talent.sidebarList[0];
+sidebarConf.setCurrentSidebar = function (moduleName, sidebarName) {
+  for (let sidebar of sidebarConf[moduleName].sidebarList) {
+    if (sidebar.sidebarName === sidebarName) {
+      sidebarConf[moduleName].currentSidebar = sidebar;
+      break;
+    }
+  }
+};
 
 export default sidebarConf;
