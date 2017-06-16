@@ -9,7 +9,8 @@ import java.io.IOException;
 public class Demo extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String a = request.getParameter("a");
+        System.out.println(a);
     }
 
     @Override
