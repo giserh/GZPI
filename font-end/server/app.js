@@ -17,14 +17,8 @@ let test = {
   name: 'test'
 };
 
-/*
-app.get('/', (req, res) => {
-  res.sendfile(path.resolve(__dirname, '../dist/index.html'));
-});
-*/
-
-app.get('/api/test', (req, res) => {
-  res.json(test);
+app.get('/project/myProject/getMyProjects.do', (req, res) => {
+  res.json({a: 1});
 });
 
 app.listen(port, () => {

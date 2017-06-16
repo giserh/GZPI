@@ -1,0 +1,7 @@
+<div ng-controller="ProjectController" style="margin-left: 102px;">
+  <sidebar-directive></sidebar-directive>
+  <tab-list></tab-list>
+  <hr>
+  <div ng-repeat="tab in module.tabList track by $index"
+       ng-include="tab.templateUrl" ng-show="tab==module.currentTab"></div>
+</div>

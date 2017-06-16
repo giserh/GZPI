@@ -13,4 +13,13 @@
         <url-pattern>/demo.do</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>getMyProjects</servlet-name>
+        <servlet-class>package01.GetMyProjectsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getMyProjects</servlet-name>
+        <url-pattern>/project/myProject/getMyProjects.do</url-pattern>
+    </servlet-mapping>
+
 </web-app>

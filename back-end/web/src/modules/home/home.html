@@ -1,0 +1,52 @@
+<div ng-controller="HomeController">
+  <div ng-include="'./modules/home/homeSidebar/homeSidebar.html'"></div>
+  <div class="home-container">
+    <div class="nav fn-clear">
+      <ul class="tab-list fn-clear fn-left">
+        <li ng-class="{active:vm.currentPanel=='MyTasks'}">
+          <a href="javascript:void(0)" ng-click="vm.showPanel('MyTasks')">我的事项</a>
+        </li>
+        <li ng-class="{active:vm.currentPanel=='MyApprovals'}">
+          <a href="javascript:void(0)" ng-click="vm.showPanel('MyApprovals')">待我审批</a>
+          <i class="count">{{vm.approvalCount}}</i>
+        </li>
+      </ul>
+    </div>
+    <div ng-show="vm.currentPanel=='MyTasks'">
+      <ul class="title-list fn-clear">
+        <li>事项编号</li>
+        <li>事项名称</li>
+        <li>类型</li>
+        <li>当前阶段</li>
+        <li>我的角色</li>
+      </ul>
+      <div class="table-name" ng-click="vm.toggleItem('ProjectTasks')">
+        <span class="fa" ng-class="{'fa-caret-down': vm.showProjectTasks,'fa-caret-right': !vm.showProjectTasks}"></span>
+        <span class="icon glyphicon glyphicon-book"></span>
+        项目/7
+      </div>
+      <table ng-show="vm.showProjectTasks">
+        <tbody>
+        <tr class="fn-clear" ng-repeat="project in vm.projectTasks" ng-click="setInitialState('project', 'myProject', project)">
+          <td>{{project.projectId}}</td>
+          <td>{{project.title}}</td>
+          <td>{{project.type}}</td>
+          <td>{{project.stage}}</td>
+          <td>{{project.role}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div ng-show="vm.currentPanel=='MyApprovals'">
+      <ul ng-show="vm.showProjectApprovals" class="approvals-list">
+        <li ng-repeat="project in vm.projectApprovals" ng-click="setInitialState('project', 'pendingApproval', project)">
+          <h4>{{project.title}}</h4>
+          <div>
+            <span class="icon glyphicon glyphicon-book"></span>
+            <span>项目</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

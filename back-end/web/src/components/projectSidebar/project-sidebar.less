@@ -1,0 +1,47 @@
+.project-sidebar{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  border: 1px solid #eee;
+  overflow: auto;
+  .project-list{
+    li{
+      border-bottom: 1px solid #eee;
+      padding: 10px;
+      cursor: pointer;
+      position: relative;
+      &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 5px;
+        height: 100%;
+        background: #69c1ed;
+        display: none;
+      }
+      &:hover,&.active{
+        background: #eaf6fb;
+        &:before{
+          display: block;
+        }
+      }
+    }
+    h4{
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    span{
+      display: inline-block;
+      font-size: 3px;
+      padding-right: 5px;
+      margin-bottom: 2px;
+    }
+    div{
+      font-size: 12px;
+      color: #999;
+    }
+  }
+}

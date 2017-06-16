@@ -1,0 +1,16 @@
+<div class="sidebar">
+  <ul>
+    <li>
+      <a ui-sref="app.home">
+        <span class="glyphicon glyphicon-home"></span>
+        <span>回首页</span>
+      </a>
+    </li>
+    <li ng-repeat="bar in module.sidebarList track by $index">
+      <a href="javascript:void(0)" ng-click="openTab(bar)" ng-class="{active: bar==module.currentSidebar}">
+        <span class="{{bar.iconClass}}"></span>
+        <span>{{bar.title}}</span>
+      </a>
+    </li>
+  </ul>
+</div>

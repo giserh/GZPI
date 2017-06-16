@@ -1,0 +1,10 @@
+<div class="project-sidebar">
+  <ul class="project-list">
+    <li ng-click="getProjectDetail(project)"
+        ng-repeat="project in vm.projectList" ng-class="{'active': project.title==vm.currentProject.title}">
+      <h4>{{project.title}}</h4>
+      <span ng-repeat="stage in project.stages">{{stage}}</span>
+      <div>{{project.role}}</div>
+    </li>
+  </ul>
+</div>

@@ -1,37 +1,42 @@
 /**
- * Created by Leo on 2017/6/12.
+ * Created by Lxg on 2017/6/12.
  */
 
 class HttpInitiator {
-  static doGet(url, parameter) {
-    checkParameter('doGet', url, parameter);
-    doGet(url, parameter);
+  static doGet(parameter, url) {
+    return doGet(parameter, url);
   }
 
-  static doPost(url, parameter) {
-    checkParameter('doPost', url, parameter);
-    doPost(url, parameter);
+  static doPost(parameter, url) {
+    return doPost(parameter, url);
   }
 }
 
-function checkParameter(launchType, url, parameter) {
-  if (typeof parameter !== 'object') {
-    throw new Error('parameter should be an object, \n at HttpLauncher.' + launchType + '(url, parameter) \n at ' + url);
-  }
+function doGet(parameter, url) {
+  return new Promise(function(resolve, reject) {
+    $.ajax({
+      type: 'GET',
+      data: parameter,
+      url: url,
+      success: function (data) {
+        resolve(data);
+      },
+      error: function (error) {
+        reject(error);
+      }
+    });
+  });
 }
 
-function serialize(obj) {
-}
-
-function doGet(url, parameter) {
-  let xhr = new XMLHttpRequest();
-  xhr.open('GET', url + "?" + serialize(parameter), false);
-}
-
-function doPost(url, parameter) {
-  let xhr = new XMLHttpRequest();
-  xhr.open('POST', url, false);
-  xhr.send(parameter);
+function doPost(parameter, url) {
+  $.ajax({
+    type: 'POST',
+    data: parameter,
+    url: url,
+    success: function (data) {
+      console.log(data);
+    }
+  })
 }
 
 export default HttpInitiator;

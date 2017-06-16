@@ -26,13 +26,8 @@ scripts.forEach(item => {
 let app = angular.module('app', ['ui.router', 'app.directives', 'app.services', 'app.controllers']);
 
 app.run(['$rootScope', '$state', function ($rootScope, $state) {
-  sidebarConf.setCurrentSidebar('data', 'personalData');
-  sidebarConf.setCurrentSidebar('project', 'pendingApproval');
-  sidebarConf.setCurrentSidebar('talent', 'internalTalents');
-
   $rootScope.setInitialState = function (moduleName, sidebarName, detailInfo) {
     sidebarConf.setCurrentSidebar(moduleName, sidebarName);
-    console.log(detailInfo);
     $state.go('app.' + moduleName);
   };
 }]);
